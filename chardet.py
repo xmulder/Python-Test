@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-#利用chardet库来检测文件的编码,在命令行下执行python chardet.py XXX.txt
+#利用chardet库来检测txt文件的编码,在命令行下执行python chardet.py XXX.txt
 
 import chardet
 import sys
