@@ -14,9 +14,13 @@ def txtToXls(TxtFilename,XlsName):
     f=open(TxtFilename,encoding='utf-8')
     
     #创建一个excel
+    #x为列
+    #y为行
     x=0
     y=0
     xlsTemp=xlwt.Workbook()
+    
+    #初始化表的风格
     styleHead=xlwt.XFStyle()
     styleBody=xlwt.XFStyle() 
     
@@ -69,8 +73,12 @@ def txtToXls(TxtFilename,XlsName):
         
         #readline函数表示从txt文本中一行行的读取
         LineTemp=f.readline()
+        
+        #LineTemp为空,则终止读取
         if not LineTemp:
             break
+        
+        #按照空格分隔,只分割前两个空格
         for i in LineTemp.split(' ',2):
             item=i.strip()
             sheetTemp.write(x+1,y,item,styleBody)
